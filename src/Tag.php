@@ -1,5 +1,7 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
+
 namespace iggyvolz\DocBlockParser;
 
 use LogicException;
@@ -13,17 +15,17 @@ class Tag
 {
     public function __construct(string $name, string $description, array $tags)
     {
-        $this->name=$name;
-        $this->description=$description;
-        $this->tags=$tags;
+        $this->name = $name;
+        $this->description = $description;
+        $this->tags = $tags;
     }
     private string $name;
-    public function getName():string
+    public function getName(): string
     {
         return $this->name;
     }
     private string $description;
-    public function getDescription():string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -31,15 +33,14 @@ class Tag
     /**
      * @return Subtag[]
      */
-    public function getTags():array
+    public function getTags(): array
     {
         return $this->tags;
     }
 
     public function __get(string $var)
     {
-        switch($var)
-        {
+        switch ($var) {
             case "Name":
                 return $this->getName();
             case "Description":
@@ -47,7 +48,7 @@ class Tag
             case "Tags":
                 return $this->getTags();
             default:
-                throw new LogicException("Invalid property $var on ".self::class);
+                throw new LogicException("Invalid property $var on " . self::class);
         }
     }
 }
