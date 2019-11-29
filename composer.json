@@ -1,0 +1,22 @@
+{
+    "name": "iggyvolz/docblockparser",
+    "description": "Docblock parser for PHP",
+    "type": "library",
+    "require-dev": {
+        "phan/phan": "^2.4",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Katie Volz",
+            "email": "iggyvolz@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "iggyvolz\\DocBlockParser\\": "src"
+        }
+    }
+}

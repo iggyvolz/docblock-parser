@@ -1,0 +1,5 @@
+This project's interpretation of docblocks:
+/**
+ * description
+ * @tag tag-description @subtag subtag-description @subtag2 subtag2-description
+ */
