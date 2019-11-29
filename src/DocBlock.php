@@ -38,6 +38,19 @@ class DocBlock
         return $this->tags;
     }
 
+    /**
+     * @return Tag[]
+     */
+    public function getTagsByName(string $name): array
+    {
+        return array_filter($this->tags, fn(Tag $t):bool => $t->Name === $name);
+    }
+
+    public function getTagByName(string $name): ?Tag
+    {
+        return $this->getTagsByName($name)[0] ?? null;
+    }
+
     public function __get(string $var)
     {
         switch ($var) {

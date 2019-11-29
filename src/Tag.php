@@ -51,4 +51,18 @@ class Tag
                 throw new LogicException("Invalid property $var on " . self::class);
         }
     }
+
+
+    /**
+     * @return Subtag[]
+     */
+    public function getSubtagsByName(string $name): array
+    {
+        return array_values(array_filter($this->tags, fn(Subtag $t):bool => $t->Name === $name));
+    }
+
+    public function getSubtagByName(string $name): ?Subtag
+    {
+        return $this->getSubtagsByName($name)[0] ?? null;
+    }
 }
